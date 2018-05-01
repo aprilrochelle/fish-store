@@ -1,7 +1,7 @@
 // Filter fish that are "on sale"
 const filterFish = () => {
   $('#available .fish').not('.on-sale').toggle();
-}
+};
 
 const changeButtonText = () => {
   $('#show-sale').text((i, text) => {
@@ -10,10 +10,10 @@ const changeButtonText = () => {
       returnText = 'Show All';
     } else {
       returnText = 'Show Sale Fish';
-    }
+    };
     return returnText;
-  })
-}
+  });
+};
 
 $('#show-sale').click(() => {
   changeButtonText();
@@ -22,8 +22,8 @@ $('#show-sale').click(() => {
 
 // Add fish to "Basket"
 const moveToCart = (e) => {
-  let fishCard = $(e.target).closest('.fish');
+  const fishCard = $(e.target).closest('.fish');
   $('#snagged').append(fishCard);
-}
+};
 
 $('button.add').click(moveToCart);
