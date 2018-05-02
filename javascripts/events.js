@@ -19,6 +19,15 @@ const changeButtonText = () => {
 const moveToCart = (e) => {
   const fishCard = $(e.target).closest('.fish');
   $('#snagged').append(fishCard);
+  $(e.target).text('Remove from Basket');
+  $(e.target).on('click', removeFromCart);
+};
+
+const removeFromCart = (e) => {
+  const fishCard = $(e.target).closest('.fish');
+  $('#available').append(fishCard);
+  $(e.target).text('Add to Basket');
+  $(e.target).on('click', moveToCart);
 };
 
 const bindEvents = () => {
